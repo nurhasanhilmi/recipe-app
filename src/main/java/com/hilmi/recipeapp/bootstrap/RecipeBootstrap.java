@@ -4,14 +4,15 @@ import com.hilmi.recipeapp.model.*;
 import com.hilmi.recipeapp.repositories.CategoryRepository;
 import com.hilmi.recipeapp.repositories.RecipeRepository;
 import com.hilmi.recipeapp.repositories.UnitOfMeasureRepository;
-import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.*;
 
 @Component
-public class RecipeBootstrap implements CommandLineRunner {
+public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEvent> {
     private final CategoryRepository categoryRepository;
     private final UnitOfMeasureRepository unitOfMeasureRepository;
     private final RecipeRepository recipeRepository;
@@ -134,7 +135,7 @@ public class RecipeBootstrap implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void onApplicationEvent(ContextRefreshedEvent event) {
         recipeRepository.saveAll(getRecipes());
     }
 }
