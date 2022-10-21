@@ -63,17 +63,16 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         guacamole.getCategories().add(mexican);
         guacamole.getCategories().add(american);
 
-        guacamole.getIngredients().add(new Ingredient("ripe avocados", new BigDecimal(2), units.get("Each"), guacamole));
-        guacamole.getIngredients().add(new Ingredient("kosher salt, plus more to taste", new BigDecimal(".25"), units.get("Teaspoon"), guacamole));
-        guacamole.getIngredients().add(new Ingredient("fresh lime or lemon juice", new BigDecimal(1), units.get("Tablespoon"), guacamole));
-        guacamole.getIngredients().add(new Ingredient("minced red onion or thinly sliced green onion", new BigDecimal(4), units.get("Tablespoon"), guacamole));
-        guacamole.getIngredients().add(new Ingredient("serrano (or jalapeño) chillis, stems and seeds removed, minced", new BigDecimal(2), units.get("Each"), guacamole));
-        guacamole.getIngredients().add(new Ingredient("cilantro (leaves and tender stems), finely chopped", new BigDecimal(2), units.get("Tablespoon"), guacamole));
-        guacamole.getIngredients().add(new Ingredient("ripe tomato, chopped (optional)", new BigDecimal(".5"), units.get("Each"), guacamole));
+        guacamole.addIngredient(new Ingredient("ripe avocados", new BigDecimal(2), units.get("Each")));
+        guacamole.addIngredient(new Ingredient("kosher salt, plus more to taste", new BigDecimal(".25"), units.get("Teaspoon")));
+        guacamole.addIngredient(new Ingredient("fresh lime or lemon juice", new BigDecimal(1), units.get("Tablespoon")));
+        guacamole.addIngredient(new Ingredient("minced red onion or thinly sliced green onion", new BigDecimal(4), units.get("Tablespoon")));
+        guacamole.addIngredient(new Ingredient("serrano (or jalapeño) chillis, stems and seeds removed, minced", new BigDecimal(2), units.get("Each")));
+        guacamole.addIngredient(new Ingredient("cilantro (leaves and tender stems), finely chopped", new BigDecimal(2), units.get("Tablespoon")));
+        guacamole.addIngredient(new Ingredient("ripe tomato, chopped (optional)", new BigDecimal(".5"), units.get("Each")));
 
         Notes guacamoleNotes = new Notes();
         guacamoleNotes.setRecipeNotes("Chilling tomatoes hurts their flavor. So, if you want to add chopped tomato to your guacamole, add it just before serving.");
-        guacamoleNotes.setRecipe(guacamole);
 
         guacamole.setNotes(guacamoleNotes);
 
@@ -110,22 +109,20 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
                 "\n" +
                 "Wrap warmed tortillas in a tea towel to keep them warm until serving.");
 
-        tacos.getCategories().add(mexican);
         tacos.getCategories().add(american);
 
-        tacos.getIngredients().add(new Ingredient("small corn tortillas", new BigDecimal(8), units.get("Each"), tacos));
-        tacos.getIngredients().add(new Ingredient("packed baby arugula (3 ounces)", new BigDecimal(3), units.get("Cup"), tacos));
-        tacos.getIngredients().add(new Ingredient("medium ripe avocados, sliced", new BigDecimal(2), units.get("Each"), tacos));
-        tacos.getIngredients().add(new Ingredient("radishes, thinly sliced", new BigDecimal(4), units.get("Each"), tacos));
-        tacos.getIngredients().add(new Ingredient("cherry tomatoes, halved", new BigDecimal(".5"), units.get("Pint"), tacos));
-        tacos.getIngredients().add(new Ingredient("red onion, thinly sliced", new BigDecimal(".25"), units.get("Each"), tacos));
-        tacos.getIngredients().add(new Ingredient("sour cream", new BigDecimal(".5"), units.get("Cup"), tacos));
-        tacos.getIngredients().add(new Ingredient("milk", new BigDecimal(".25"), units.get("Cup"), tacos));
-        tacos.getIngredients().add(new Ingredient("lime, cut into wedges", new BigDecimal(1), units.get("Each"), tacos));
+        tacos.addIngredient(new Ingredient("small corn tortillas", new BigDecimal(8), units.get("Each")));
+        tacos.addIngredient(new Ingredient("packed baby arugula (3 ounces)", new BigDecimal(3), units.get("Cup")));
+        tacos.addIngredient(new Ingredient("medium ripe avocados, sliced", new BigDecimal(2), units.get("Each")));
+        tacos.addIngredient(new Ingredient("radishes, thinly sliced", new BigDecimal(4), units.get("Each")));
+        tacos.addIngredient(new Ingredient("cherry tomatoes, halved", new BigDecimal(".5"), units.get("Pint")));
+        tacos.addIngredient(new Ingredient("red onion, thinly sliced", new BigDecimal(".25"), units.get("Each")));
+        tacos.addIngredient(new Ingredient("sour cream", new BigDecimal(".5"), units.get("Cup")));
+        tacos.addIngredient(new Ingredient("milk", new BigDecimal(".25"), units.get("Cup")));
+        tacos.addIngredient(new Ingredient("lime, cut into wedges", new BigDecimal(1), units.get("Each")));
 
         Notes tacosNotes = new Notes();
         tacosNotes.setRecipeNotes("Look for ancho chile powder with the Mexican ingredients at your grocery store, on buy it online. (If you can't find ancho chili powder, you replace the ancho chili, the oregano, and the cumin with 2 1/2 tablespoons regular chili powder, though the flavor won't be quite the same.)");
-        tacosNotes.setRecipe(tacos);
 
         tacos.setNotes(tacosNotes);
 
